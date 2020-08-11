@@ -2,9 +2,10 @@ import React, {useState, useEffect, useHistory} from 'react';
 import axiosWithAuth from '../../utils/axiosWithAuth';
 
 
-const history = useHistoryl
+const history = useHistory;
 
-export const RegForm = props => {
+const RegForm = props => {
+    
     const [post, setPost] = useState([]);
 
     const [err, setErr] = useState({
@@ -22,14 +23,14 @@ export const RegForm = props => {
 const handleChanges = e => {
     e.persist();
     const newFormData = {
-        ...usersModel, [e.target.name]: e.target.value
+        ...user, [e.target.name]: e.target.value
     }
     setUser(newFormData);
 }
 const submitForm = e => {
     e.preventDefault();
     axiosWithAuth()
-    .post('/register', users)
+    .post('/register', user)
     .then(res => {
         setPost(res.data);
         console.log("Successful Registration! ", res.data);
@@ -73,3 +74,4 @@ return (
 
 
 }
+export default RegForm;

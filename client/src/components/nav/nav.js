@@ -1,8 +1,8 @@
 import React from "react";
 import {Route, Link} from 'react-router-dom';
-import {button, Navbar} from 'reactstrap';
+import {Button, Navbar} from 'reactstrap';
 
-export const Nav = () => {
+const Nav = () => {
     return(
         <div>
             <Navbar>
@@ -20,3 +20,5 @@ export const Nav = () => {
         </div>
     )
 }
+
+export default Nav;
